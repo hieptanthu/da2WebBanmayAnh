@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../user/lbry/fontawesome-free-6.4.2-web/css/all.css">
+
+    <script type="module" src="../../user/lbry/fontawesome-free-6.4.2-web/js/all.js"></script>    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="../../user/css/style.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/sanPham.css">
+    <link rel="stylesheet" href="../../user/css/gioHang.css">
+    <link rel="stylesheet" href="../../user/css/thanhtoan.css">
+    <link rel="stylesheet" href="../../user/css/footer.css">
+    <script src="../../user/js/Cookie.js"></script>
+    <script src="../../user/js/sanPham.js"></script>
+    <script src="../../user/js/gioHang.js"></script>
+    <script src="../../user/js/thanhToan.js"></script>
+    <title>Thanh Toán</title>
+</head>
+
+<body>
+    <header id="cpsHeader" class="cpsHeader">
+
+        <!-- link -->
+
+        <div id="TopHeader" class="w3-center w3-animate-top TopHeader">
+            <div class="cps-container">
+                <div class="topHe">
+                    <div id="logo" class="logo">
+                        <a href="../../user/index.html"><img width="70px" src="../../user/jmg/logo1.png" alt="đây là logo"
+                                srcset=""></a>
+                    </div>
+                    <div id="DanhMuc">
+                        <a onclick="document.getElementById('DsDanhMuc').style.display='block'">
+                            <i class="fa-solid fa-list" style="margin: auto 10px auto auto;"></i>
+                            <p>Danh mục</p>
+                        </a>
+                    </div>
+                    <div class="search">
+                        <input placeholder="Search.." style="border: none;" id="search" type="text" />
+                        <input style="font-size: 30px;
+                        margin: auto;
+                    " onclick="seach()" class="fa-solid fa-magnifying-glass" type="button">
+                    </div>
+                    <div id="cart" class="cart">
+                        <a href="../../user/html/gioHang.html">
+                            <i style="font-size: 40px;     margin: auto;" class="fa-solid fa-cart-shopping"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </div>
+                    <div id="user" class="user">
+                        <a href="../../user/html/login.html">
+                            <i style="margin: auto 10px;" class="fa-solid fa-user"></i>
+                            <p>Đăng nhập</p>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+    </header>
+
+    <div class="container">
+        <div class="cps-container">
+            <section class="main">
+                <div class="row">
+                    <div class="col-8 col-s-12 padding-form">
+                        <div class="title">THÔNG TIN THANH TOÁN</div>
+                        <div class=note>(<span>*</span>) Bắt buộc</div>
+                        <form action="#" onsubmit="return DatHang()" method="post">
+
+
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <label for="txt_hoten">Họ tên: <span>*</span></label><br>
+                                    <input type="text" id="txt_hoten">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <label for="txt_sdt">Số điện thoại: <span>*</span></label><br>
+                                    <input type="text" id="txt_sdt">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <label for="txt_email">Email:</label><br>
+                                    <input type="text" id="txt_email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <select class="form-select form-select-sm mb-3" id="city"
+                                        aria-label=".form-select-sm">
+                                        <option value="" selected>Chọn tỉnh thành</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <select class="form-select form-select-sm mb-3" id="district"
+                                        aria-label=".form-select-sm">
+                                        <option value="" selected>Chọn quận huyện</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                                    <option value="" selected>Chọn phường xã</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-s-12">
+                                    <label for="txt_ghichu">Ghi chú:</label><br>
+                                    <textarea id="txt_ghichu" cols="135" rows="1"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-4 col-s-12 padding-form">
+                        <div class="title">ĐƠN HÀNG</div>
+                        <div class="row pay" style="border-bottom: 3px solid #dbdbdb;">
+                            <div class="col-6 col-s-12" style="text-align: left;">
+                                <label>Sản phẩm</label>
+                            </div>
+                            <div class="col-6 col-s-12" style="text-align: right;">
+                                <label>Tổng</label>
+                            </div>
+                        </div>
+                        <div id="sphamdd"></div>
+
+                        <div class="row trace">
+                            <div class="col-6 col-s-12" style="text-align: left;">
+                                <label>Tổng</label>
+                            </div>
+                            <div class="col-6 col-s-12" style="text-align: right;">
+                                <label id="tt"></label>đ
+                            </div>
+                        </div>
+                        <div class="row pay">
+                            <div class="col-12 col-s-12" style="text-align: left;">
+                                <button onclick="DatHang()">ĐẶT HÀNG</button>
+                            </div>
+                        </div>
+                        <div class="row pay">
+                            <form action="#">
+                                <div class="payments">
+                                    <input checked="true" type="radio" id="tienmat" name="payments" value="tm"
+                                        class="radio-payments">
+                                    <label for="tienmat" class="label-payments">Thanh toán tiền mặt khi nhận hàng (tiền
+                                        mặt /
+                                        quẹt thẻ ATM, Visa, Master)</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+    <footer class="footer container">
+        <div class="cps-container  ">
+            <div class="row2 footer-content">
+                <div class="">
+                    <h3 class="footer-heading">CHĂM SÓC KHÁCH HÀNG</h3>
+                    <ul class="footer-list">
+
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Hưỡng dẫn mua hàng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Chính sách vận chuyển</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VỀ CHÚNG TÔI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">tuyển dụng </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">điểu khoản</a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="">
+                    <h3 class="footer-heading">THEO DÕI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-facebook"></i>
+                            <a href="" class="footer-item__link">facebook</a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-instagram"></i>
+                            <a href="" class="footer-item__link">instagram </a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-twitter"></i>
+                            <a href="" class="footer-item__link">twitter</a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
+                    <div class="footer__download">
+                        <img src="/assets/img/logo.jpg" alt="" class="footer__download-pr">
+                        <div class="footer__download-apps">
+                            <a href="" class="footer__download-apps-link">
+
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+                            <a href="" class="footer__download-apps-link">
+
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer__bottom">
+            <div class=" cps-container wide ">
+                <p class=" row footer__text">
+                    Địa chỉ: Làng Trương. Tổng đài hỗ trợ: 0812334442234 - Email: gachar@gmail.com © 2020 Bản quyền
+                    thuộc về Hiep
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Variable to track whether the user confirmed leaving the page
+        var leavingConfirmed = false;
+
+        // Add a beforeunload event listener
+        window.addEventListener('beforeunload', function (e) {
+            // Thêm logic xử lý trước khi trang thoát
+            var confirmationMessage = 'Bạn có chắc chắn muốn rời khỏi trang?';
+
+            // Set the confirmation message for the user
+            (e || window.event).returnValue = confirmationMessage;
+
+            // Log the confirmation message to the console
+            console.log(confirmationMessage);
+
+            // Set the leavingConfirmed variable to true when the user confirms leaving
+            leavingConfirmed = !!e.returnValue;
+        });
+
+        // Add an unload event listener
+        window.addEventListener('unload', function () {
+            // Check if the user confirmed leaving or not
+            if (leavingConfirmed) {
+                // Set the 'SpDonHang' cookie to an empty array (you might want to check if this is intentional)
+                setCookie('SpDonHang', JSON.stringify([]), 7);
+            }
+        });
+        var listSpDatHang = getCookie('SpDonHang') ? JSON.parse(getCookie('SpDonHang')) : [];
+        let str = "";
+        var t = 0;
+        listSpDatHang.forEach(x => {
+            t += layGiaTien(x.idSanPham);
+            str += `
+            <div class="row pay">
+                <div class="col-6 col-s-12" style="text-align: left;">
+                    <label>${layName(x.idSanPham)}  * ` + x.soLuong + `</label>
+                </div>
+                <div class="col-6 col-s-12" style="text-align: right;">
+                    <label>` + layGiaTien(x.idSanPham).toLocaleString() + `đ</label>
+                </div>
+            </div>
+            `;
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var sp = document.getElementById("sphamdd");
+            var tt = document.getElementById("tt");
+            if (sp) {
+                sp.innerHTML +=str;
+            }
+            if (tt) {
+                tt.innerHTML +=  t.toLocaleString() ;;
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="/Đồ án 2/Css/Login.css">
+   
+</head>
+<body>
+
+    <style>
+        body {
+	font-family: sans-serif;	
+	background-image: url(../../user/jmg/landscape-photography_1645.jpg);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.container {
+	width: 380px;
+	margin:7% auto;
+	border-radius: 25px;
+	background-color: rgba(242, 237, 237, 0.3);
+	box-shadow: 0 0 17px #333;
+	opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.container:not(.blockNone) {
+	opacity: 1;
+        transform: translateY(0);
+    }
+
+
+.header {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.header h1 {
+	color: #151515;
+	font-size: 45px;
+	margin-bottom: 30px;
+}
+
+.main {
+	text-align: center;
+}
+
+.main input, button {
+	width: 300px;
+	height: 40px;
+	border:none;
+	outline: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	font-size: 15px;
+	color: #302f2f;
+	margin-bottom: 40px;
+}
+
+.main button {
+	padding-left: 0;
+	background-color: #83acf1;
+	letter-spacing: 1px;
+	font-weight: bold;
+	margin: 4px 0 0 0;
+
+	
+}
+
+.main button:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #7799d4;
+}
+.main input:hover {
+	box-shadow: 2px 2px 5px #555;
+	background-color: #ddd;
+}
+
+.main span {
+	position: relative;
+}
+
+.main i {
+	position: absolute;
+	left: 15px;
+	color: #333;
+	font-size: 16px;
+	top: 2px;
+}
+	.blockNone{
+		display: none;
+	}
+    </style>
+ <div id="login" class="container">
+ 	<div class="header">
+ 		<h1>ĐĂNG NHẬP</h1>
+ 	</div>
+ 	<div class="main">
+ 		<div>
+ 			<span>
+ 				
+ 				<input id="userName" type="text" placeholder="Tên đăng nhập" name="">
+ 			</span><br>
+ 			<span>
+ 				
+ 				<input id="pass" type="password" placeholder="Mật khẩu" name="">
+ 			</span><br>
+ 				<button onclick="LayDaTa()">Đăng nhập</button>
+				<button onclick="taoTk()">tạo tài khoản</button>
+				<button style="margin-bottom: 70px;" onclick="quenMk()">Quên Mật Khẩu</button>
+
+ 		</div>
+ 	</div>
+ </div>
+
+ <div id="taoTk" class="container blockNone">
+	<div class="header">
+		<h1>tạo tài khoản</h1>
+	</div>
+	<div class="main">
+		<div>
+			<span>
+				
+				<input id="sdt-gmail" type="text" placeholder="số điện thoại/email" name="">
+			</span><br>
+			<span>
+				
+				<input id="userName" type="text" placeholder="Tên đăng nhập" name="">
+			</span><br>
+			<span>
+				
+				<input id="pass" type="text" placeholder="mật khẩu" name="">
+			</span><br>
+			<span>
+				
+				<input id="pass2" type="password" placeholder="Mật khẩu lần 2" name="">
+			</span><br>
+				<button onclick="LayDaTa()">gửi</button>
+				<button style="margin-bottom: 70px;" onclick="trolai()">trở lại</button>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+ <div id="QuenMk"   class="container blockNone">
+	<div class="header">
+		<h1>Quên Mật Khẩu</h1>
+	</div>
+	<div class="main">
+		<div>
+			<span>
+				
+				<input id="userName" type="text" placeholder="số điện thoại/mail" name="">
+			</span><br>
+			
+				<button onclick="LayDaTa()">gửi</button>
+				<button style="margin-bottom: 70px;" onclick="trolai()">trở lại</button>
+			  
+
+		</div>
+	</div>
+</div>
+
+<script>
+	
+    function fadeIn(element) {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(-100%)";
+
+        setTimeout(function () {
+            element.style.opacity = 1;
+            element.style.transform = "translateY(0)";
+        }, 500);
+		element.classList.remove("blockNone")
+    }
+
+    function fadeOut(element) {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(0)";
+		element.classList.add("blockNone")
+		
+    }
+
+	function quenMk(){
+		var login = document.getElementById("login")
+		var QuenMk = document.getElementById("QuenMk")
+
+        fadeIn(QuenMk);
+        fadeOut(login);
+		
+	}
+
+
+	function taoTk(){
+		var login = document.getElementById("login")
+		var taoTk = document.getElementById("taoTk")
+		
+		fadeIn(taoTk);
+        fadeOut(login);
+		
+	}
+	function trolai(){
+		var login = document.getElementById("login")
+		var QuenMk = document.getElementById("QuenMk")
+		var taoTk= document.getElementById("taoTk")
+		fadeOut(QuenMk);
+        fadeOut(taoTk);
+        fadeIn(login);
+		
+	}
+	
+</script>
+ 
+    
+</body>
+</html>
+    
+
+   

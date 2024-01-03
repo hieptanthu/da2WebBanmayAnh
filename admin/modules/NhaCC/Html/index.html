@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="/admin/assets/css/style.css">
+    <script type="module" src="../js/index.js"></script>
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+    <div style="text-align: center; margin: 0 auto; width: 60%;">
+      
+    
+    
+            <h1>Nhà cung cấp</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Số thứ tự</th>
+                        <th>id</th>
+                        <th>Tên Nhà Cung Cấp </th>
+                        <th>
+                            tác vụ
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="table-body-Dm2">
+                    <td>1</td>
+                    <td>1</td>
+                    <th> nhà cung cấp</th>
+                    <th>
+                        <button>vô hiệu hóa</button>
+                    </th>
+                </tbody>
+            </table>
+            <button onclick="openModal()">Thêm</button>
+     
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <!-- Form for entering category name -->
+            <form id="categoryForm">
+                <label for="categoryName">Tên nhà Cung Cấp:</label>
+                <input type="text" id="categoryName" name="categoryName" required>
+                <button type="button" onclick="submitForm()">Gửi</button>
+            </form>
+        </div>
+    </div>
+
+
+    
+   
+
+    <style>
+      
+    
+       /* Styling for the modal container */
+       .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+            padding-top: 60px; /* Place modal content at the center */
+        }
+
+        /* Styling for the modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style for form inputs and button */
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+        }
+    
+    </style>
+
+<script>
+    var modal = document.getElementById('myModal');
+
+    function openModal() {
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    function submitForm() {
+        // Add your logic to handle the form submission here
+        // For example, you can get the input value using document.getElementById('categoryName').value
+        // and perform further actions (e.g., sending data to the server).
+        closeModal();
+    }
+</script>
+</body>
+</html>

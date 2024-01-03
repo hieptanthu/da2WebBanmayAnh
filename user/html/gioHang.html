@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../user/lbry/fontawesome-free-6.4.2-web/css/all.css">
+    <script type="module" src="../../user/lbry/fontawesome-free-6.4.2-web/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../../user/css/style.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/sanPham.css">
+    <link rel="stylesheet" href="../../user/css/gioHang.css">
+    <link rel="stylesheet" href="../../user/css/footer.css">
+    <script src="../../user/js/Cookie.js"></script>
+    <script src="../../user/js/sanPham.js"></script>
+    <script src="../../user/js/gioHang.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .row {
+
+            margin-left: 0;
+        }
+    </style>
+    <header id="cpsHeader" class="cpsHeader">
+
+        <!-- link -->
+
+        <div id="TopHeader" class="w3-center w3-animate-top TopHeader">
+            <div class="cps-container">
+                <div class="topHe">
+                    <div id="logo" class="logo">
+                        <a href="../../user/index.html"><img width="70px" src="../../user/jmg/logo1.png" alt="đây là logo"
+                                srcset=""></a>
+                    </div>
+                    <div id="DanhMuc">
+                        <a onclick="document.getElementById('DsDanhMuc').style.display='block'">
+                            <i class="fa-solid fa-list" style="margin: auto 10px auto auto;"></i>
+                            <p>Danh mục</p>
+                        </a>
+                    </div>
+                    <div class="search">
+                        <input placeholder="Search.." style="border: none;" id="search" type="text" />
+                        <input style="font-size: 30px;
+                        margin: auto;
+                    " onclick="seach()" class="fa-solid fa-magnifying-glass" type="button">
+                    </div>
+                    <div id="cart" class="cart">
+                        <a href="../../user/html/gioHang.html">
+                            <i style="font-size: 40px;     margin: auto;" class="fa-solid fa-cart-shopping"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </div>
+                    <div id="user" class="user">
+                        <a href="../../user/html/login.html">
+                            <i style="margin: auto 10px;" class="fa-solid fa-user"></i>
+                            <p>Đăng nhập</p>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+    </header>
+    <div class="container">
+        <div class="cps-container">
+            <section class="main">
+
+                <div class="title">Giỏ hàng</div>
+                <div class="row">
+                    <div class=" padding-table">
+                        <table class="table-prod">
+                            <thead>
+                                <tr>
+                                    <th>Chọn <input type="checkbox" id="checkAll" onclick="chonTatCa()"></th>
+                                    <th>SẢN PHẨM</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>GIÁ</th>
+                                    <th>SỐ LƯỢNG</th>
+                                    <th>TẠM TÍNH</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listCart">
+
+                            </tbody>
+                        </table>
+                        <div class="update">
+
+                            <button onclick="deleteSp()">Xóa đã chọn</button>
+                        </div>
+                    </div>
+                    <div class="right padding-table">
+                        <table class="table-right">
+                            <thead>
+                                <th class="title">Tổng tiền</th>
+                                <th>VND</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tổng</td>
+                                    <td class="price" id="spTong"></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                        <div class="pay">
+                            <button onclick="LaySpThanhToan()">Tiến hành thanh toán</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+
+
+        <script>
+
+            function tinhTongTamTinh() {
+                var tong = 0;
+                var listTamTinh = document.querySelectorAll('#listCart td:nth-child(6)');
+
+                listTamTinh.forEach(function (tamTinh) {
+                    var gia = parseFloat(tamTinh.textContent.replace('₫', '').replace(/\./g, ''));
+                    tong += gia;
+                    document.getElementById("spTong").textContent = tong.toLocaleString() + '₫';
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+
+                var soNhapInputs = document.querySelectorAll("#listCart .soNhap");
+
+                // Gắn sự kiện "input" cho mỗi ô nhập số
+                soNhapInputs.forEach(function (input) {
+                    input.addEventListener("input", function () {
+                        // Lấy hàng chứa ô nhập số hiện tại
+                        var row = input.closest("tr");
+
+                        // Lấy số lượng từ ô nhập số
+                        var soLuong = parseInt(input.value);
+
+                        // Lấy giá tiền từ thẻ td thứ 4 trong hàng hiện tại
+                        var giaTien = parseFloat(row.querySelector("td:nth-child(4)").textContent.replace('₫', '').replace(/\./g, ''));
+                        var dataId = row.querySelector("td:nth-child(1) input.chonMot").getAttribute('data-Id');
+                        SuaSanPham(dataId, soLuong);
+                        console.log("k");
+                        // Tính tổng tiền (giá tiền * số lượng)
+                        var tongTien = giaTien * soLuong;
+
+                        // In tổng tiền vào thẻ td thứ 6 trong hàng hiện tại
+                        row.querySelector("td:nth-child(6)").textContent = tongTien.toLocaleString() + '₫';
+                        tinhTongTamTinh();
+
+
+                    });
+
+
+                });
+
+            });
+            // Lấy tất cả các ô nhập số trong tbody có id là "listCart"
+
+
+            window.onload = tinhTongTamTinh;
+
+
+
+
+            // Chọn tất cả
+            function chonTatCa() {
+                var checkAll = document.getElementById('checkAll');
+                var checkboxes = document.querySelectorAll('.chonMot');
+
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.checked = checkAll.checked;
+                });
+            }
+
+
+
+            function deleteSp() {
+                var checkboxes = document.querySelectorAll('.chonMot');
+
+                // Duyệt qua từng checkbox
+                checkboxes.forEach(function (checkbox) {
+
+                    // In giá trị vào console (bạn có thể sử dụng giá trị này theo nhu cầu của mình)
+                    var isChecked = checkbox.checked; // Check if the checkbox is checked
+
+                    if (isChecked) {
+                        var dataId = checkbox.getAttribute('data-Id');
+                        if (xoaSanPham(dataId) == true) {
+                            var row = checkbox.closest('tr');
+                            row.parentNode.removeChild(row);
+                        } else {
+                            alert("Bị lỗi ở đâu đó");
+                        }
+                    }
+
+                    // Nếu bạn muốn sử dụng giá trị trong một hàm khác, bạn có thể truyền giá trị đó vào hàm đó
+                    // ví dụ: tenHàmKhac(dataId);
+                });
+                alert("Xóa thành công");
+            }
+
+            function LaySpThanhToan() {
+                var checkboxes = document.querySelectorAll('.chonMot');
+                var listId = []
+                // Duyệt qua từng checkbox
+                checkboxes.forEach(function (checkbox) {
+
+                    // In giá trị vào console (bạn có thể sử dụng giá trị này theo nhu cầu của mình)
+                    var isChecked = checkbox.checked; // Check if the checkbox is checked
+
+                    if (isChecked) {
+                        var dataId = checkbox.getAttribute('data-Id');
+                        listId.push(dataId)
+
+                    }
+
+                    // Nếu bạn muốn sử dụng giá trị trong một hàm khác, bạn có thể truyền giá trị đó vào hàm đó
+                    // ví dụ: tenHàmKhac(dataId);
+                });
+
+                dsSanPhamMua(listId)
+            }
+            hienThi();
+
+
+
+        </script>
+
+
+    </div>
+    <footer class="footer container">
+        <div class="cps-container  ">
+            <div class="row2 footer-content">
+                <div class="">
+                    <h3 class="footer-heading">CHĂM SÓC KHÁCH HÀNG</h3>
+                    <ul class="footer-list">
+
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Hưỡng dẫn mua hàng</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Chính sách vận chuyển</a>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VỀ CHÚNG TÔI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">tuyển dụng </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">điểu khoản</a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="">
+                    <h3 class="footer-heading">THEO DÕI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-facebook"></i>
+                            <a href="" class="footer-item__link">facebook</a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-instagram"></i>
+                            <a href="" class="footer-item__link">instagram </a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-twitter"></i>
+                            <a href="" class="footer-item__link">twitter</a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
+                    <div class="footer__download">
+                        <img src="/assets/img/logo.jpg" alt="" class="footer__download-pr">
+                        <div class="footer__download-apps">
+                            <a href="" class="footer__download-apps-link">
+
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+                            <a href="" class="footer__download-apps-link">
+
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer__bottom">
+            <div class=" cps-container wide ">
+                <p class=" row footer__text">
+                    Địa chỉ: Làng Trương. Tổng đài hỗ trợ: 0812334442234 - Email: gachar@gmail.com © 2020 Bản quyền
+                    thuộc về Hiep
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

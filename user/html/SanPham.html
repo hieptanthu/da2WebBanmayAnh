@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../../user/lbry/fontawesome-free-6.4.2-web/css/all.css">
+    <script type="module" src="../../user/lbry/fontawesome-free-6.4.2-web/js/all.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="../../user/css/style.css">
+   <link rel="stylesheet" href="../../user/css/header.css">
+   <link rel="stylesheet" href="../../user/css/sanPham.css">
+   <link rel="stylesheet" href="../../user/css/gioHang.css">
+   <link rel="stylesheet" href="../../user/css/footer.css">
+    <script src="../../user/js/Cookie.js"></script>
+    <script  src="../../user/js/sanPham.js"></script>
+    <script  src="../../user/js/gioHang.js"></script>
+    
+    
+    <title>Bán máy ảnh</title>
+</head>
+<body>
+    <header id="cpsHeader" class="cpsHeader">
+        
+        <!-- link -->
+
+        <div id="TopHeader" class="w3-center w3-animate-top TopHeader">
+            <div class="cps-container">
+                <div class="topHe">
+                    <div id="logo" class="logo">
+                        <a href="../../user/index.html"><img width="70px" src="../../user/jmg/logo1.png" alt="đây là logo" srcset=""></a>
+                    </div>
+                    <div  id="DanhMuc">
+                        <a onclick="document.getElementById('DsDanhMuc').style.display='block'">
+                            <i class="fa-solid fa-list" style="margin: auto 10px auto auto;"></i>
+                            <p>Danh mục</p>
+                        </a>
+                    </div>
+                    <div   class="search">
+                        <input placeholder="Search.." style="border: none;" id="search" type="text"/>
+                        <input style="font-size: 30px;
+                        margin: auto;
+                    " onclick="seach()" class="fa-solid fa-magnifying-glass" type="button">
+                    </div>
+                    <div id="cart" class="cart">
+                        <a href="../../user/html/gioHang.html">
+                            <i  style="font-size: 40px;     margin: auto;" class="fa-solid fa-cart-shopping"></i>
+                            <p>Giỏ hàng</p>
+                        </a>
+                    </div>
+                    <div id="user" class="user">
+                        <a href="../../user/html/login.html">
+                            <i style="margin: auto 10px;" class="fa-solid fa-user"></i>
+                            <p>Đăng nhập</p>
+                        </a>
+                    </div>
+
+                </div>
+                
+            </div>
+        
+
+
+    </header>
+
+    <div  id="DsDanhMuc" class="modal">
+        
+        <div class="fromModal" >
+            <ul id="headerDanhMuc">
+                <li><a >máy ảnh cơ</a></li>
+                <li><a >máy ảnh kỹ thuật số</a></li>
+                <li><a >máy ảnh du lịch</a></li>
+                <li><a >máy ảnh chuyên nghiệp</a></li>
+                <li><a >phụ kiện máy ảnh</a></li>
+                <li><a >khác</a></li>
+               
+                
+            </ul>
+
+            <div id="BodyDanhMuc">
+                
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="cps-container">
+            <div id="BoLoc">
+                <div>
+                    <label for="Locgia">Giá:</label>
+                    <select  id="Locgia" name="Locgia">
+                        <option value="1">tất cả</option>
+                        <option value="2">Dưới 2 triệu</option>
+                        <option value="3">2 đến 5 triệu </option>
+                        <option value="4">5 đến 10 triệu </option>
+                        <option value="5">10 đến 20 triệu </option>
+                        <option value="6">trên 20 triệu </option>
+                    </select>
+
+                </div>
+                <div class="box-order-item">
+                    <label for="LocthuongHieu">Thương Hiêu:</label>
+                    <select  id="LocthuongHieu" name="LocthuongHieu">
+                        <option value="">tất cả</option>
+
+                    </select>
+
+                </div>
+                <div>
+                    <label class="right" for="LocXapXep">Sắp Xếp:</label>
+                    <select  id="LocXapXep" name="LocXapXep">
+                        <option value="">ngẫu nghiên</option>
+                        <option value="1">từ thấp đến cao</option>
+                        <option value="2">từ cao đến thấp</option>
+                        <option value="3">cũ nhất</option>
+                        <option value="4">mới nhất</option>
+                    </select>
+
+                </div>
+
+                <div>
+                    <label  for="LocloaiHang">Sắp Xếp:</label>
+                    <select  id="LocloaiHang" name="LocloaiHang">
+                        <option value="">tất cả</option>
+                        <option value="0">Mới</option>
+                        <option value="1">Cũ</option>
+                    </select>
+
+                </div>
+            </div>
+            <div id="DsSanPham"><div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=62" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg                                                                                                                                                                                                                                                                                                                                                                                                       )">
+                    </div>
+                    <h4 class="product-item__name">may QUAY SONY D344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        30.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Cũ
+                        </span>
+                        <span class="">
+                        101view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(62,'may QUAY SONY D344',1,30000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg                                                                                                                                                                                                                                                                                                                                                                                                       ');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=63" class="product-item">
+                    <div class="product-item__img" style="background-image: url(ads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg                                                                                                                                                                                                                                                                                                                                                                                                                                                 )">
+                    </div>
+                    <h4 class="product-item__name">may QUAY SONY E344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        40.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Cũ
+                        </span>
+                        <span class="">
+                        100view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(63,'may QUAY SONY E344',1,40000000,'ads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg                                                                                                                                                                                                                                                                                                                                                                                                                                                 ');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=36" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may anh sony A344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        10.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Cũ
+                        </span>
+                        <span class="">
+                        105view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(36,'may anh sony A344',1,10000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=37" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may anh sony B344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        20.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Cũ
+                        </span>
+                        <span class="">
+                        106view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(37,'may anh sony B344',1,20000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=40" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may anh sony D344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        50.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Cũ
+                        </span>
+                        <span class="">
+                        112view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(40,'may anh sony D344',1,50000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=42" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may anh sony HY344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        7.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Mới
+                        </span>
+                        <span class="">
+                        101view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(42,'may anh sony HY344',1,7000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=44" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may anh sony K344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        80.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Mới
+                        </span>
+                        <span class="">
+                        110view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(44,'may anh sony K344',1,80000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=53" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may QUAY SONY A344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        10.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Mới
+                        </span>
+                        <span class="">
+                        100view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(53,'may QUAY SONY A344',1,10000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=54" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may QUAY SONY B344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        30.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Mới
+                        </span>
+                        <span class="">
+                        100view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(54,'may QUAY SONY B344',1,30000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                <div class="SanPham">
+                <a href="/HtmlPage/ChiTietSanPham.html?id=55" class="product-item">
+                    <div class="product-item__img" style="background-image: url(https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg)">
+                    </div>
+                    <h4 class="product-item__name">may QUAY SONY C344</h4>
+                    <div class="product-item__price">
+                        <span class="product-item__price">
+                        40.000.000 đ
+                        </span>
+                    </div>
+                    <div class="product-item__action">
+          
+                
+                        
+                        <span class="product-item__sold">10 đã bán</span>
+                    </div>
+                    <div class="product-item__bootom">
+                        <span class="product-item__brand">
+                        Mới
+                        </span>
+                        <span class="">
+                        100view
+                        </span>
+                    </div>
+                    <div class="product-item__favourite">
+                        <svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg><!-- <i class="fa-solid fa-check"></i> Font Awesome fontawesome.com -->
+                        <span>yêu thích</span> 
+                    </div>
+                    
+                </a>
+          
+          
+                <ul class="buy">
+                  <li> <button onclick="layThongTin(55,'may QUAY SONY C344',1,40000000,'https://mayanhnhatlinh.com/wp-content/uploads/2018/09/may-anh-dslr-la-gi-va-nguyen-ly-hoat-dong-cua-may-4.jpg');" type="button" class="themVaoGioHang">Thêm Vào giỏ Hàng</button>
+                  </li>
+                  <li>
+                    <button onclick="ok()" type="button" class="Ngay">Mua ngay</button>
+                  </li>
+              </ul>
+                </div>
+                </div>
+           
+
+           
+            <ul id="page_SanPham" class="pagination">
+                <li class="active"><a href="#">&lt;</a></li>
+                <li><a href="#">1</a></li><li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li><li class="active"><a href="#">&gt;</a></li>
+            </ul>
+
+           
+           
+            
+
+
+            
+        </div>   
+    </div>
+
+
+    <footer class="footer">
+        <div class="cps-container  ">
+            <div class="row2 footer-content">
+                <div class="">
+                    <h3 class="footer-heading">CHĂM SÓC KHÁCH HÀNG</h3>
+                    <ul class="footer-list">
+                       
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Hưỡng dẫn mua hàng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Chính sách vận chuyển</a>
+    
+                            </li>
+                        
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VỀ CHÚNG TÔI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">Giới thiệu</a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">tuyển dụng </a>
+                        </li>
+                        <li class="footer-item">
+                            <a href="" class="footer-item__link">điểu khoản</a>
+    
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="">
+                    <h3 class="footer-heading">THEO DÕI</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-facebook"></i>
+                            <a href="" class="footer-item__link">facebook</a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-instagram"></i>
+                            <a href="" class="footer-item__link">instagram </a>
+                        </li>
+                        <li class="footer-item">
+                            <i class="footer-item__icon fa-brands fa-twitter"></i>
+                            <a href="" class="footer-item__link">twitter</a>
+    
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="footer-heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
+                    <div class="footer__download">
+                        <img src="/assets/img/logo.jpg" alt="" class="footer__download-pr">
+                        <div class="footer__download-apps">
+                            <a href="" class="footer__download-apps-link">
+    
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+                            <a href="" class="footer__download-apps-link">
+    
+                                <img src="/assets/img/logo.jpg" alt="" class="footer__download-apps-img">
+                            </a>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+        <div class="footer__bottom">
+            <div class=" cps-container wide ">
+                <p class=" row footer__text">
+                    Địa chỉ: Làng Trương. Tổng đài hỗ trợ: 0812334442234 - Email: gachar@gmail.com © 2020 Bản quyền thuộc về Hiep
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+                document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("DsDanhMuc");
+            
+            window.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+        function layThongTin(Id,name,SoLuong,giaSanPham,img){
+
+        console.log(Id+name+SoLuong+giaSanPham+img)
+        themSanPham(Id,name,SoLuong,giaSanPham,img)
+        }
+    //   // Bắt đầu viết mã JavaScript
+    //   var elements = document.getElementsByClassName("SanPham");
+
+       
+    //     for (var i = 0; i < elements.length; i++) {
+    //     // Bắt sự kiện khi di chuột vào
+    //     elements[i].addEventListener("mouseover", function(event) {
+    //         var hoveredElement = event.currentTarget;
+            
+    //         var buyElement = hoveredElement.querySelector(".buy");
+    //         buyElement.style.display = "flex";
+    //         buyElement.style.opacity = 0;
+    //         buyElement.style.transform = "translateY(-100%)";
+
+    //         setTimeout(function () {
+    //             buyElement.style.opacity = 1;
+    //             buyElement.style.transform = "translateY(0)";
+    //     }, 100);
+    //         console.log(buyElement)
+    //     });
+
+    //     // Bắt sự kiện khi di chuột ra khỏi phần tử
+    //     elements[i].addEventListener("mouseout", function(event) {
+    //         var hoveredElement = event.currentTarget;
+            
+    //         var buyElement = hoveredElement.querySelector(".buy");
+    //         buyElement.style.display = "none";
+    //     });
+        // }
+    
+
+    </script>
+</body>
+</html>
